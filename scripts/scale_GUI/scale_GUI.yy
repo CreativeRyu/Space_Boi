@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "scale_GUI",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Skripte",
-    "path": "folders/Skripte.yy",
+  "$GMScript":"v1",
+  "%Name":"scale_GUI",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scale_GUI",
+  "parent":{
+    "name":"Skripte",
+    "path":"folders/Skripte.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

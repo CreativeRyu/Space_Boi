@@ -23,8 +23,8 @@ var _target = obj_ship;
 
 // Follow Target
 if(instance_exists(_target)){
-	global.camera_x = _target.x  -vp_correctionx - (global.camera_width/2);
-	global.camera_y = _target.y  -vp_correctiony - (global.camera_height/2);
+	global.camera_x = _target.x  -vp_correctionx - (global.camera_width/3.4);
+	global.camera_y = _target.y  -vp_correctiony - (global.camera_height/3);
 	
 	
 	global.camera_x = clamp(global.camera_x, 0, room_width - global.camera_width);

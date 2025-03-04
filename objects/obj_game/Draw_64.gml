@@ -9,12 +9,12 @@ switch(room){
 		draw_set_halign(fa_center);
 		draw_set_font(fnt_title);
 		draw_text_transformed_color(
-			global.camera_width/2, 25, "SPACE BOI", 
+			global.camera_width/2, 50, "SPACE BOI", 
 			2, 2, 0, _silver, _silver, _silver, _sky, 1);
 			
 		draw_set_font(fnt_text);
 		draw_text_transformed_color(		
-			global.camera_width/2, 85, "starring Lieutenant Jay",
+			global.camera_width/2, 115, "starring Lieutenant Jay",
 			1.2 , 1.2, 0,_sky,_silver,_silver,_sky, 1);
 			
 		if (fade_in) {
@@ -31,14 +31,45 @@ switch(room){
 		    }
 		}
 
-		draw_text_color(global.camera_width/2,300, @">> PRESS START <<",c_white, c_aqua, c_aqua,c_white, fade_alpha);
+		draw_text_color(global.camera_width/2,380, @">> PRESS START <<",c_white, c_aqua, c_aqua,c_white, fade_alpha);
 		draw_set_halign(fa_left);
+#region Controller Debug
+		//draw_set_font(fnt_debug)
+		//var xx = 32;
+		//var yy = 32;
+		//for (var i = 0; i < 12; i++;)
+		//{
+		//if gamepad_is_connected(i)
+		//    {
+		//    draw_text(xx, yy, "Gamepad Slot - " + string(i));
+		//    draw_text(xx, yy + 20, "Gamepad Type - " + string(gamepad_get_description(i)));
+		//    draw_text(xx, yy + 40, "Left H Axis - " + string(gamepad_axis_value(i, gp_axislh)));
+		//    draw_text(xx, yy + 60, "Left V Axis - " + string(gamepad_axis_value(i, gp_axislv)));
+		//    draw_text(xx, yy + 80, "Right H Axis - " + string(gamepad_axis_value(i, gp_axisrh)));
+		//    draw_text(xx, yy + 100, "Right V Axis - " + string(gamepad_axis_value(i, gp_axisrv)));
+		//    draw_text(xx, yy + 120, "Fire Rate - " + string(gamepad_button_value(i, gp_shoulderrb)));
+		//    yy += 160;
+		//    }
+		//else
+		//    {
+		//    draw_text(xx, yy, "Gamepad Slot - " + string(i));
+		//    draw_text(xx, yy + 20, "Gamepad not connected" + string(gamepad_get_description(i)));
+		//    yy += 64;
+		//    }
+		//if yy > room_height - 224
+		//    {
+		//    yy = 32;
+		//    xx += 412;
+		//    }
+		//}
 		break;
-
+#endregion
 
 	case rm_level_1:
+	draw_set_font(fnt_text)
 		draw_text(20, 20, "LIVES: ")
 		draw_text(20, 50, "SCORE: " + string(score))
+
 		var _xx = 130;
 		repeat(lives) {
 			draw_sprite_ext(spr_ship, 0, _xx, 30 ,0.5, 0.5,0,c_white,1);
@@ -51,11 +82,11 @@ switch(room){
 		draw_set_halign(fa_center);
 		draw_set_font(fnt_title);
 		draw_text_transformed_color(		
-		global.camera_width/2 , 25, @"Level 1 
+		global.camera_width/2 , 50, @"Level 1 
 Complete", 1.7 , 1.7, 0,_gold,_silver,_silver,_gold,1);
 	
 		draw_set_font(fnt_text);	
-		draw_text(global.camera_width/2, 280, @">> PRESS START FOR LEVEL 2 <<");			
+		draw_text(global.camera_width/2, 380, @">> PRESS START FOR LEVEL 2 <<");			
 		draw_set_halign(fa_left);
 		break;
 
@@ -75,14 +106,14 @@ Complete", 1.7 , 1.7, 0,_gold,_silver,_silver,_gold,1);
 		draw_set_halign(fa_center);
 		draw_set_font(fnt_title);
 		draw_text_transformed_color(		
-		global.camera_width/2 , 25, @"YOU'RE 
+		global.camera_width/2 , 50, @"YOU'RE 
 AWESOME", 1.7 , 1.7, 0,_gold,_silver,_silver,_gold,1);
 		
 		draw_set_font(fnt_text);
 		draw_text_transformed_color(		
-		global.camera_width/2, 170, "Thanks for Playing", 1.2 , 1.2, 0,_silver,_silver,_silver,_silver,1);
+		global.camera_width/2, 190, "Thanks for Playing", 1.2 , 1.2, 0,_silver,_silver,_silver,_silver,1);
 		
-		draw_text(global.camera_width/2,280, @">> PRESS START TO REPLAY <<");			
+		draw_text(global.camera_width/2,380, @">> PRESS START TO REPLAY <<");			
 		draw_set_halign(fa_left);
 		break;
 	
@@ -90,19 +121,19 @@ AWESOME", 1.7 , 1.7, 0,_gold,_silver,_silver,_gold,1);
 		draw_set_halign(fa_center);
 		draw_set_font(fnt_title);
 		draw_text_transformed_color(		
-		global.camera_width/2 , 20, "GAME OVER", 2 , 2, 0,_red,_silver,_silver,_red,1);
+		global.camera_width/2 , 50, "GAME OVER", 2 , 2, 0,_red,_silver,_silver,_red,1);
 	
 		draw_set_font(fnt_text);
 		draw_text_transformed_color(		
-			global.camera_width/2, 100, @"Save the World from Asteroids
+			global.camera_width/2, 120, @"Save the World from Asteroids
 and try again.",
 			1.2 , 1.2, 0,_silver,_silver,_silver,_silver,1);
 		
 		draw_text_transformed_color(		
-			global.camera_width/2, 190, "You're SCORE: " + string(score),
+			global.camera_width/2, 220, "You're SCORE: " + string(score),
 			1.1 , 1.1, 0,_silver,_silver,_silver,_silver,1);
 		
-		draw_text(global.camera_width/2, 270, @">> PRESS START TO REPLAY <<");			
+		draw_text(global.camera_width/2,380, @">> PRESS START TO REPLAY <<");			
 		draw_set_halign(fa_left);
 		break;
 }

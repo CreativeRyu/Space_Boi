@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "drop_powerup",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Skripte",
-    "path": "folders/Skripte.yy",
+  "$GMScript":"v1",
+  "%Name":"drop_powerup",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"drop_powerup",
+  "parent":{
+    "name":"Skripte",
+    "path":"folders/Skripte.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

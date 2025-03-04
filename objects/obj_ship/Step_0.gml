@@ -1,5 +1,6 @@
 // Ship Controls
 // Der Winkel des Schiffs wird bei Tastendruck verändert
+// Android Device Controls
 var _left_dpad = gamepad_button_check(0, gp_padl);
 var _right_dpad = gamepad_button_check(0, gp_padr);
 var _a_button = gamepad_button_check_pressed(0, gp_face2);
@@ -7,28 +8,22 @@ var _b_button = gamepad_button_check(0, gp_face1);
 var _h_point = gamepad_axis_value(0, gp_axislh);
 var _v_point = gamepad_axis_value(0, gp_axislv);
 var _r2_button = gamepad_button_check(0, gp_shoulderrb);
-var _movex = 0;
-var _movey = 0;
+var _r1_button = gamepad_button_check(0, gp_shoulderr);
 
-with(obj_joystick) {
-	_movex = joy_x / radius;
-	_movey = joy_y / radius;
-}
+// GamePad Controls
 
 if(keyboard_check(vk_left) or keyboard_check(ord("A"))
-or _left_dpad or _h_point < 0 
-or _movex < -0.5) {
+or _left_dpad or _h_point < -0.2) {
 	image_angle += 5;
 }
 
 if(keyboard_check(vk_right) or keyboard_check(ord("D"))
-or _right_dpad or _h_point > 0 
-or _movex > 0.5) {
+or _right_dpad or _h_point > 0.2) {
 	image_angle -= 5;
 }
 
 if(keyboard_check(vk_up) or keyboard_check(ord("W"))
-or _r2_button or _movey < -0.1) {
+or _r2_button or _r1_button) {
 	if(!audio_is_playing(snd_boost)){
 		audio_play_sound(snd_boost,1,false);
 	}
@@ -58,7 +53,7 @@ or _r2_button or _movey < -0.1) {
 }
 
 if(keyboard_check(vk_down) or keyboard_check(ord("S"))
-or _b_button or _movey > 0.1) {
+or _b_button) {
 	if(speed > 0) {
 		speed -= 0.05;
 	}

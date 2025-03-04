@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "scale_canvas",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Skripte",
-    "path": "folders/Skripte.yy",
+  "$GMScript":"v1",
+  "%Name":"scale_canvas",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scale_canvas",
+  "parent":{
+    "name":"Skripte",
+    "path":"folders/Skripte.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }
