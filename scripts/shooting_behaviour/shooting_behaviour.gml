@@ -61,12 +61,13 @@ function create_gun(_direction, _guntype, _bullettype, _faction, _creator){
 			break;
 			
 		default:
-			audio_play_sound(snd_2bullets, 1, false);
+			audio_play_sound(snd_bullet, 1, false);
 			create_bullet(_direction, _bullettype, _faction, _creator)
 			break;
 	}
 }
 
+// Erstellung einer einzigen Bullet sowohl beim Spieler als auch beim Gegner
 function create_bullet(_direction, _bullettype, _faction, _creator, _bullet_x = undefined, _bullet_y = undefined){
 	var _bullet;
 	if(_bullet_x != undefined){
@@ -75,7 +76,7 @@ function create_bullet(_direction, _bullettype, _faction, _creator, _bullet_x = 
 		_bullet = instance_create_layer(x, y, "Instances", _bullettype);
 	}
 	if(_bullettype == obj_enemy_bullet) {
-		audio_play_sound(snd_bullet, 1, false);
+		audio_play_sound(snd_enemy_bullet, 1, false);
 	}
 	with(_bullet) {
 		direction = _direction;

@@ -16,7 +16,7 @@ if(point_distance(x, y, obj_ship.x, obj_ship.y) < 250) {
 	// Bullet Feuerrate ist also eine 1/s
 	bullet_counter ++;
 	if(bullet_counter >= 60) {
-		create_bullet(image_angle, obj_enemy_bullet, self.faction, self.id)
+		create_bullet(image_angle, obj_enemy_bullet, self.faction, self.id);
 		bullet_counter = 0;
 	}
 }

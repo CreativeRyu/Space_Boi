@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_explosion",
-    "path":"sprites/spr_explosion/spr_explosion.yy",
+    "name":"spr_explosion1",
+    "path":"sprites/spr_explosion1/spr_explosion1.yy",
   },
   "spriteMaskId":null,
   "visible":true,

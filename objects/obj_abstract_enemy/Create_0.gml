@@ -14,14 +14,3 @@ enemy_score = 15;
 bullet_counter = 0;
 
 exhaust_counter = 0;
-
-
-
-
-
-
-
-
-
-
-

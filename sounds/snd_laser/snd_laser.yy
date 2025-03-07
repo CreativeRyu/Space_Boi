@@ -20,6 +20,6 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_laser.mp3",
-  "type":0,
-  "volume":0.64,
+  "type":1,
+  "volume":0.42,
 }

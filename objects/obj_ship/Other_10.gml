@@ -16,5 +16,8 @@ if(not is_invincible) {
 }
 	
 if not is_invincible and shield_on == 0 {
-	instance_destroy();
+	current_health =- 1;
+	if(current_health <= 0) {
+		instance_destroy();
+	}
 }

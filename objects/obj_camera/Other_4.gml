@@ -1,4 +1,4 @@
-/// @description Camera Setup
+/// @description Camera Setup on Room Start
 
 var _target = obj_ship;
 // Camera

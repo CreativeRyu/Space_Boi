@@ -64,7 +64,7 @@ switch(room){
 		//}
 		break;
 #endregion
-
+	// UI im ersten Level
 	case rm_level_1:
 	draw_set_font(fnt_text)
 		draw_text(20, 20, "LIVES: ")
@@ -89,7 +89,7 @@ Complete", 1.7 , 1.7, 0,_gold,_silver,_silver,_gold,1);
 		draw_text(global.camera_width/2, 380, @">> PRESS START FOR LEVEL 2 <<");			
 		draw_set_halign(fa_left);
 		break;
-
+	// UI im zweiten Level
 	case rm_level_2:	
 		draw_text(20, 20, "LIVES: ")
 		draw_text(20, 50, "SCORE: " + string(score))
@@ -99,6 +99,32 @@ Complete", 1.7 , 1.7, 0,_gold,_silver,_silver,_gold,1);
 			_xx+= 25;
 		}
 		draw_text(20, 80, "ENEMIES: " + string(instance_number(obj_abstract_enemy)));
+
+		break;
+	// Raum UI nach Abschluss des zweiten Levels
+	case rm_level_2_complete:
+		draw_set_halign(fa_center);
+		draw_set_font(fnt_title);
+		draw_text_transformed_color(		
+		global.camera_width/2 , 50, @"Level 2
+Complete", 1.7 , 1.7, 0,_gold,_silver,_silver,_gold,1);
+	
+		draw_set_font(fnt_text);	
+		draw_text(global.camera_width/2, 380, @">> PRESS START FOR LEVEL 3 <<");			
+		draw_set_halign(fa_left);
+		break;
+	
+	// UI im dritten Level
+	case rm_level_3:	
+		draw_text(20, 20, "LIVES: ")
+		draw_text(20, 50, "SCORE: " + string(score))
+		draw_text(20, 80, "HEALTH: " + string(obj_ship_bossfight.current_hp))
+		_xx = 130;
+		repeat(lives) {
+			draw_sprite_ext(spr_ship, 0, _xx, 30 ,0.5, 0.5,0,c_white,1);
+			_xx+= 25;
+		}
+		draw_text(20, 110, "ENEMIES: " + string(instance_number(obj_abstract_enemy_bossfight)));
 
 		break;
 

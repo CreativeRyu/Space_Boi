@@ -1,31 +1,20 @@
-/// @description Follow Target and Parallax
-var _target = obj_ship;
+/// @description Follow Target and Parallax Effect Camera System
+// Toggle Fullscreen 4:3
+if keyboard_check_pressed(vk_f11) {
+	window_set_fullscreen(!window_get_fullscreen());
+}
 
-// Change Aspect Ratio
-//var _display_ratio = display_get_width() / display_get_height();
-//var _ratio = global.camera_width / global.camera_height;
 
-//if (_display_ratio < _ratio){
-//    global.camera_height = display_get_height();
-
-//    global.camera_width = global.camera_height * _display_ratio;
-//	//global.display_scale = 1;
-//} 
-
-// Change Aspect Ratio in Browser
-//if (browser_width != width || browser_height != height)
-//    {
-//	    width = min(base_width, browser_width);
-//	    height = min(base_height, browser_height);
-//	    scale_canvas(base_width, base_height, width, height, true, display_scale);
-//		scale_gui(width, height);
-//    }
+if (room == rm_level_3) {
+	var _target = obj_ship_bossfight
+} else {
+	var _target = obj_ship;
+}
 
 // Follow Target
 if(instance_exists(_target)){
-	global.camera_x = _target.x  -vp_correctionx - (global.camera_width/3.4);
-	global.camera_y = _target.y  -vp_correctiony - (global.camera_height/3);
-	
+	global.camera_x = _target.x  -vp_correctionx - (global.camera_width/2);
+	global.camera_y = _target.y  -vp_correctiony - (global.camera_height/2);
 	
 	global.camera_x = clamp(global.camera_x, 0, room_width - global.camera_width);
 	global.camera_y = clamp(global.camera_y, 0, room_height - global.camera_height);
@@ -90,4 +79,18 @@ if(room == rm_level_1){
 	// Nebula
 	layer_x("Parallax_1", global.camera_x * 0.60);
 	layer_y("Parallax_1", global.camera_y * 0.60);
+
+} else if(room == rm_level_3){
+	
+	// Background
+	layer_x("Background", global.camera_x * 0.90);
+	layer_y("Background", global.camera_y * 0.90);
+	
+	// Cluster
+	layer_x("Cluster", global.camera_x * 0.88);
+	layer_y("Cluster", global.camera_y * 0.88);
+	
+	// Starfield
+	layer_x("Starfield", global.camera_x * 0.89);
+	layer_y("Starfield", global.camera_y * 0.89);
 }

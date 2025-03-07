@@ -1,13 +1,4 @@
-/// @description Hier Beschreibung einfügen
-// Sie können Ihren Code in diesem Editor schreiben
-
-
-
-
-
-
-
-
+/// @description Collision Event with Player Bullet
 
 
 
