@@ -4,7 +4,6 @@ if keyboard_check_pressed(vk_f11) {
 	window_set_fullscreen(!window_get_fullscreen());
 }
 
-
 if (room == rm_level_3) {
 	var _target = obj_ship_bossfight
 } else {
@@ -13,9 +12,14 @@ if (room == rm_level_3) {
 
 // Follow Target
 if(instance_exists(_target)){
-	global.camera_x = _target.x  -vp_correctionx - (global.camera_width/2);
-	global.camera_y = _target.y  -vp_correctiony - (global.camera_height/2);
-	
+	if( _target == obj_ship){
+		global.camera_x = _target.x  -vp_correctionx - (global.camera_width/2);
+		global.camera_y = _target.y  -vp_correctiony - (global.camera_height/2);
+	}
+	else {
+		global.camera_x = _target.x  -vp_correctionx - (global.camera_width/2);
+		global.camera_y = _target.y  -vp_correctiony - (global.camera_height/1.2);
+	}
 	global.camera_x = clamp(global.camera_x, 0, room_width - global.camera_width);
 	global.camera_y = clamp(global.camera_y, 0, room_height - global.camera_height);
 }
@@ -33,6 +37,7 @@ if(global.camera_shake > 0) {
 
 // Set Camera Position
 camera_set_view_pos(view_camera[0], global.camera_x, global.camera_y);
+
 
 // Parallax Effect
 if(room == rm_start) {

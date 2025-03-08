@@ -12,6 +12,7 @@ var _v_point = gamepad_axis_value(0, gp_axislv);
 var _r2_button = gamepad_button_check(0, gp_shoulderrb);
 var _r1_button = gamepad_button_check(0, gp_shoulderr);
 
+if (sprite_index == spr_ship) {
 // GamePad Controls
 // X Movement mit Raumbegrenzung
 if(keyboard_check(vk_left) or keyboard_check(ord("A"))
@@ -42,13 +43,14 @@ else {
 
 if(keyboard_check(vk_up) or keyboard_check(ord("W"))
 or _up_dpad or _v_point < -0.2) {
-	if(y > room_height / 2) {
+	if(y > 100) {
 		y -= fly_speed/2;
 	}
 }
 
 // Particle Thrust FX
-exhaust_counter++;
+
+	exhaust_counter++;
 
 if(exhaust_counter > 6){
 	exhaust_counter = 0;
@@ -61,9 +63,12 @@ if(exhaust_counter > 6){
 		_burst_y, 
 		part_type_exhaust,
 		1);
+		}
 	}
-}
+
 
 if(keyboard_check_pressed(vk_space) or _a_button) {
 	create_gun(image_angle + 90, guns, bullettype, faction, id);
+}
+
 }

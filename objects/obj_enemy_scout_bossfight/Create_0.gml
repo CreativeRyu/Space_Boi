@@ -9,4 +9,4 @@ fire_rate_high = 90;
 
 alarm[0] = irandom_range(fire_rate_low, fire_rate_high);
 
-//move_towards_point(irandom(room_width), room_height, fly_speed);
+move_towards_point(irandom(room_width), room_height, fly_speed);

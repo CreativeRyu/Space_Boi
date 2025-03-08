@@ -120,7 +120,7 @@ Complete", 1.7 , 1.7, 0,_gold,_silver,_silver,_gold,1);
 		draw_text(20, 50, "SCORE: " + string(score))
 		draw_text(20, 80, "HEALTH: " + string(obj_ship_bossfight.current_hp))
 		_xx = 130;
-		repeat(lives) {
+		repeat(obj_ship_bossfight.player_lives) {
 			draw_sprite_ext(spr_ship, 0, _xx, 30 ,0.5, 0.5,0,c_white,1);
 			_xx+= 25;
 		}

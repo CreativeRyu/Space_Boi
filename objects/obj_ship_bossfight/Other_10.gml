@@ -18,6 +18,14 @@ if(not is_invincible) {
 if not is_invincible and shield_on == 0 {
 	current_hp =- other.damage;
 	if (current_hp <= 0) {
-		instance_destroy();
+		sprite_index = spr_explosion;
+		image_speed = 1;
+		image_xscale = 1.7;
+		image_yscale = 1.7;
+		global.camera_shake = 8;
+		audio_play_sound(snd_explosion, 1, false);
+		// repeat(20) {
+		// 	instance_create_layer(x, y, "Instances", obj_debris);
+		// }
 	}
 }

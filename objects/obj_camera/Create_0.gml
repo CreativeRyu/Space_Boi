@@ -16,7 +16,7 @@ background_speed = -0.2;
 bg_width = sprite_get_width(spr_start_screen);
 rollback_value = -1 * (bg_width - global.camera_width);
 
-display_scale = 2; // vergrößert den Bildschirm geht aber nicht dichter ran
+display_scale = 1.7; // vergrößert den Bildschirm geht aber nicht dichter ran
 vp_distance = 1.2;
 vp_correctionx = 70;
 vp_correctiony = 50;
