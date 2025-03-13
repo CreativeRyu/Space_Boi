@@ -10,7 +10,7 @@ image_speed = 0;
 direction_input = 0;
 max_hp = 3;
 current_hp = max_hp;
-player_lives = 3;
+player_lives = obj_game.life;
 
 is_invincible = true;
 invincibility_amount = 4;

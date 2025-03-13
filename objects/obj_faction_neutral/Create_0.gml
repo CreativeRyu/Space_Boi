@@ -1,8 +1,5 @@
-/// @description Hier Beschreibung einfügen
-// Sie können Ihren Code in diesem Editor schreiben
-
-
-
+/// @description Neutrale Fraktion für Meteoriten
+// Create Event wird durch vererbt
 
 
 // Inherit the parent event

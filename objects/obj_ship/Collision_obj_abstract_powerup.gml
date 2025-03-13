@@ -42,17 +42,13 @@ switch _powerup_type{
 		audio_play_sound(snd_powerup_splitter, 1, false);
 		alarm[3] = 8 * game_get_speed(gamespeed_fps);
 		break;
+
+	case "obj_powerup_extralife":
+		if(player_lives < 3){
+			audio_play_sound(snd_extralife, 1, false);
+			player_lives += 1;
+		}
+		break;
 }
 
 instance_destroy(other);
-
-
-
-
-
-
-
-
-
-
-

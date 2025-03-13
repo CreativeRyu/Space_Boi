@@ -13,8 +13,9 @@ shield_on = 0;
 shield_fade = false;
 bullettype = obj_player_bullet;
 exhaust_counter = 0;
-max_health = 1;
-current_health = max_health;
+max_hp = 3;
+current_hp = max_hp;
+player_lives = 1;
 
 alarm[0] = invincibility_amount * game_get_speed(gamespeed_fps);
 alarm[1] = 1;

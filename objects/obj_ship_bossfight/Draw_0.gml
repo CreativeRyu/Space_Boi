@@ -1,4 +1,4 @@
-/// @description Hier Beschreibung einfügen
+/// @description Ship Draw Event
 
 // Draw Player itself mit allen eigenschaften
 draw_self();

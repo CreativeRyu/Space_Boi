@@ -14,10 +14,26 @@ if(not is_invincible) {
 		exit;
 	}
 }
-	
+
 if not is_invincible and shield_on == 0 {
-	current_health =- 1;
-	if(current_health <= 0) {
-		instance_destroy();
+	current_hp -= other.damage;
+	audio_stop_sound(snd_hit);
+	audio_play_sound(snd_hit, 1, false);
+	if (current_hp <= 0) {
+		sprite_index = spr_explosion;
+		global.camera_shake = 8;
+		speed = 0;
+		image_speed = 1;
+		image_xscale = 1.7;
+		image_yscale = 1.7;
+		global.camera_shake = 8;
+		audio_play_sound(snd_explosion, 1, false);
+		repeat(20) {
+			instance_create_layer(x, y, "Instances", obj_debris);
+		}
+	} else {
+		is_invincible = true;
+		alarm[0] = invincibility_amount * (game_get_speed(gamespeed_fps) / 2);
+		alarm[1] = 1;
 	}
 }

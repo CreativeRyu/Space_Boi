@@ -12,3 +12,4 @@ image_angle = irandom_range(0, 359);
 speed = 1;
 image_xscale = 1.6;
 image_yscale = 1.6;
+damage = 1;

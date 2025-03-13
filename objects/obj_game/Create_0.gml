@@ -1,7 +1,7 @@
 /// @description Global Game Variables
 draw_set_font(fnt_text);
 score = 0;
-lives = 3;
+life = 0;
 
 enum FACTIONS {
 	NEUTRAL,

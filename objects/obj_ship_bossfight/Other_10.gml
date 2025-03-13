@@ -16,16 +16,21 @@ if(not is_invincible) {
 }
 
 if not is_invincible and shield_on == 0 {
-	current_hp =- other.damage;
+	current_hp -= other.damage;
+	audio_stop_sound(snd_hit);
+	audio_play_sound(snd_hit, 1, false);
 	if (current_hp <= 0) {
 		sprite_index = spr_explosion;
+		global.camera_shake = 8;
 		image_speed = 1;
 		image_xscale = 1.7;
 		image_yscale = 1.7;
 		global.camera_shake = 8;
 		audio_play_sound(snd_explosion, 1, false);
-		// repeat(20) {
-		// 	instance_create_layer(x, y, "Instances", obj_debris);
-		// }
+		repeat(20) {
+			instance_create_layer(x, y, "Instances", obj_debris);
+		}
+	} else {
+		is_invincible = true;
 	}
 }

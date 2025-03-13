@@ -25,5 +25,8 @@ switch _random_number {
 		// Shield
 		instance_create_layer(x, y, "Instances", obj_powerup_shield);
 		break;
+	case 6:
+		// Extra Life
+		instance_create_layer(x, y, "Instances", obj_powerup_extralife);
 	}
 }

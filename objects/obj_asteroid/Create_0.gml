@@ -6,3 +6,5 @@ sprite_index = choose(
 	spr_asteroid_m,
 	spr_asteroid_l
 );
+
+damage = 1;

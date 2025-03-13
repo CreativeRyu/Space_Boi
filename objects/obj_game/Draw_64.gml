@@ -33,48 +33,20 @@ switch(room){
 
 		draw_text_color(global.camera_width/2,380, @">> PRESS START <<",c_white, c_aqua, c_aqua,c_white, fade_alpha);
 		draw_set_halign(fa_left);
-#region Controller Debug
-		//draw_set_font(fnt_debug)
-		//var xx = 32;
-		//var yy = 32;
-		//for (var i = 0; i < 12; i++;)
-		//{
-		//if gamepad_is_connected(i)
-		//    {
-		//    draw_text(xx, yy, "Gamepad Slot - " + string(i));
-		//    draw_text(xx, yy + 20, "Gamepad Type - " + string(gamepad_get_description(i)));
-		//    draw_text(xx, yy + 40, "Left H Axis - " + string(gamepad_axis_value(i, gp_axislh)));
-		//    draw_text(xx, yy + 60, "Left V Axis - " + string(gamepad_axis_value(i, gp_axislv)));
-		//    draw_text(xx, yy + 80, "Right H Axis - " + string(gamepad_axis_value(i, gp_axisrh)));
-		//    draw_text(xx, yy + 100, "Right V Axis - " + string(gamepad_axis_value(i, gp_axisrv)));
-		//    draw_text(xx, yy + 120, "Fire Rate - " + string(gamepad_button_value(i, gp_shoulderrb)));
-		//    yy += 160;
-		//    }
-		//else
-		//    {
-		//    draw_text(xx, yy, "Gamepad Slot - " + string(i));
-		//    draw_text(xx, yy + 20, "Gamepad not connected" + string(gamepad_get_description(i)));
-		//    yy += 64;
-		//    }
-		//if yy > room_height - 224
-		//    {
-		//    yy = 32;
-		//    xx += 412;
-		//    }
-		//}
 		break;
-#endregion
+
 	// UI im ersten Level
 	case rm_level_1:
-	draw_set_font(fnt_text)
-		draw_text(20, 20, "LIVES: ")
-		draw_text(20, 50, "SCORE: " + string(score))
-
-		var _xx = 130;
-		repeat(lives) {
+		draw_set_font(fnt_text)
+		// Draw Lives
+		var _xx = 32;
+		repeat(obj_ship.player_lives) {
 			draw_sprite_ext(spr_ship, 0, _xx, 30 ,0.5, 0.5,0,c_white,1);
 			_xx+= 25;
 		}
+		draw_healthbar(21, 52, 120, 60, (obj_ship.current_hp / obj_ship.max_hp) * 100, c_black, c_red, c_lime, 0, true, true); 
+		draw_set_font(fnt_score_text);
+		draw_text(20, 75, "Score: " + string(score));
 
 		break;
 
@@ -90,15 +62,23 @@ Complete", 1.7 , 1.7, 0,_gold,_silver,_silver,_gold,1);
 		draw_set_halign(fa_left);
 		break;
 	// UI im zweiten Level
-	case rm_level_2:	
-		draw_text(20, 20, "LIVES: ")
-		draw_text(20, 50, "SCORE: " + string(score))
-		_xx = 130;
-		repeat(lives) {
+	case rm_level_2:
+		_xx = 32;
+		repeat(obj_ship.player_lives) {
 			draw_sprite_ext(spr_ship, 0, _xx, 30 ,0.5, 0.5,0,c_white,1);
-			_xx+= 25;
+			_xx += 25;
 		}
-		draw_text(20, 80, "ENEMIES: " + string(instance_number(obj_abstract_enemy)));
+		// Healthbar anzeigen
+		draw_healthbar(21, 52, 120, 60, (obj_ship.current_hp / obj_ship.max_hp) * 100, c_black, c_red, c_lime, 0, true, true); 
+		draw_set_font(fnt_score_text);
+		draw_text(20, 75, "Score: " + string(score));
+
+		// Draw Enemy Count
+		enemy_x = global.camera_width - 32;
+		repeat(instance_number(obj_abstract_enemy)) {
+			draw_sprite_ext(spr_enemy_hunter, 0, enemy_x, 26 ,0.4, 0.4,270,c_white,1);
+			enemy_x -= 27;
+		}
 
 		break;
 	// Raum UI nach Abschluss des zweiten Levels
@@ -116,15 +96,23 @@ Complete", 1.7 , 1.7, 0,_gold,_silver,_silver,_gold,1);
 	
 	// UI im dritten Level
 	case rm_level_3:	
-		draw_text(20, 20, "LIVES: ")
-		draw_text(20, 50, "SCORE: " + string(score))
-		draw_text(20, 80, "HEALTH: " + string(obj_ship_bossfight.current_hp))
-		_xx = 130;
+		// Leben anzeigen
+		_xx = 32;
 		repeat(obj_ship_bossfight.player_lives) {
 			draw_sprite_ext(spr_ship, 0, _xx, 30 ,0.5, 0.5,0,c_white,1);
 			_xx+= 25;
 		}
-		draw_text(20, 110, "ENEMIES: " + string(instance_number(obj_abstract_enemy_bossfight)));
+		// Healthbar anzeigen
+		draw_healthbar(21, 52, 93, 60, (obj_ship_bossfight.current_hp / obj_ship_bossfight.max_hp) * 100, c_black, c_red, c_lime, 0, true, true);
+		draw_set_font(fnt_score_text);
+		draw_text(20, 75, "Score: " + string(score));
+
+		// Draw Enemy Count
+		enemy_x = global.camera_width - 32;
+		repeat(instance_number(obj_abstract_enemy_bossfight)) {
+			draw_sprite_ext(spr_enemy_hunter, 0, enemy_x, 26 ,0.4, 0.4,270,c_white,1);
+			enemy_x -= 27;
+		}
 
 		break;
 

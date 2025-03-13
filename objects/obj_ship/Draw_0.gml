@@ -1,7 +1,8 @@
-/// @description Hier Beschreibung einfügen
+/// @description Ship Draw Event
 
 // Draw Player itself mit allen eigenschaften
 draw_self();
+if(sprite_index == spr_ship) {
 
 // Draw Gun Equip on ship
 if(guns != -1) draw_sprite_ext(
@@ -32,4 +33,6 @@ if(obj_ship.shield_on){
 	image_blend,
 	_alpha
 	);
+}
+
 }
