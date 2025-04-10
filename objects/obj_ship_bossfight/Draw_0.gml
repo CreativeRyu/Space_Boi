@@ -4,7 +4,6 @@
 draw_self();
 if(sprite_index == spr_ship) {
 
-
 // Draw Gun Equip on ship
 if(guns != -1) draw_sprite_ext(
 	spr_ship_powerups,

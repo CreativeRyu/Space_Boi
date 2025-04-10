@@ -5,8 +5,7 @@ or mouse_check_button_pressed(mb_left)
 ){
 	switch(room) {
 		case rm_start:
-			room_goto(rm_level_2);
-			life = 3;
+			room_goto(rm_level_3);
 			break;
 		
 		case rm_level_1_complete:
@@ -43,9 +42,14 @@ if (room == rm_level_1) {
 
 if (room == rm_level_2) {
 	if(instance_number(obj_abstract_enemy) <= 0) {
-		room_goto(rm_level_2_complete);
-		audio_stop_all()
-		audio_play_sound(snd_win, 1, false);
+		// Timer für den Wechsel zum nächsten Raum
+		next_room_timer--;
+		if (next_room_timer <= 0) {
+			room_goto(rm_level_2_complete);
+			audio_stop_all()
+			audio_play_sound(snd_win, 1, false);
+			next_room_timer = 120;
+		}
 	}
 	if(obj_ship.player_lives <= 0){
 		audio_stop_all()

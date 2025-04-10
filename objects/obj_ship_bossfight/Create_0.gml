@@ -10,7 +10,11 @@ image_speed = 0;
 direction_input = 0;
 max_hp = 3;
 current_hp = max_hp;
-player_lives = obj_game.life;
+//player_lives = global.life;
+player_lives = 3;
+current_shipx = x;
+current_shipy = y;
+
 
 is_invincible = true;
 invincibility_amount = 4;
@@ -20,5 +24,5 @@ shield_fade = false;
 bullettype = obj_player_bullet;
 exhaust_counter = 0;
 
-alarm[0] = invincibility_amount * game_get_speed(gamespeed_fps);
+alarm[0] = invincibility_amount * (game_get_speed(gamespeed_fps) / 4);
 alarm[1] = 1;

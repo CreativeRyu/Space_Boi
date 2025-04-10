@@ -1,3 +1,7 @@
 /// @description Reset Gun
-
-guns = -1;
+if(global.in_boss_room){
+	exit;
+}
+else {
+	guns = -1;
+}

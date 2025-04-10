@@ -32,7 +32,7 @@ if(global.camera_shake > 0) {
 	global.camera_shake -= 0.2;
 	if(global.camera_shake < 0) {
 		global.camera_shake = 0;
-	} 
+	}
 }
 
 // Set Camera Position
@@ -90,7 +90,11 @@ if(room == rm_level_1){
 	// Background
 	layer_x("Background", global.camera_x * 0.90);
 	layer_y("Background", global.camera_y * 0.90);
-	
+
+	// Nebula
+	layer_x("Nebula", global.camera_x * 0.60);
+	layer_x("Nebula", global.camera_x * 0.60);
+
 	// Cluster
 	layer_x("Cluster", global.camera_x * 0.88);
 	layer_y("Cluster", global.camera_y * 0.88);

@@ -15,7 +15,7 @@ if(not is_invincible) {
 	}
 }
 
-if not is_invincible and shield_on == 0 {
+if (not is_invincible and shield_on == 0) {
 	current_hp -= other.damage;
 	audio_stop_sound(snd_hit);
 	audio_play_sound(snd_hit, 1, false);
@@ -32,5 +32,7 @@ if not is_invincible and shield_on == 0 {
 		}
 	} else {
 		is_invincible = true;
+		alarm[0] = invincibility_amount * (game_get_speed(gamespeed_fps) / 8);
+		alarm[1] = 1;
 	}
 }

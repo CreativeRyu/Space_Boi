@@ -11,6 +11,8 @@ var _h_point = gamepad_axis_value(0, gp_axislh);
 var _v_point = gamepad_axis_value(0, gp_axislv);
 var _r2_button = gamepad_button_check(0, gp_shoulderrb);
 var _r1_button = gamepad_button_check(0, gp_shoulderr);
+current_shipx = x;
+current_shipy = y;
 
 if (sprite_index == spr_ship) {
 // GamePad Controls

@@ -44,9 +44,9 @@ switch(room){
 			draw_sprite_ext(spr_ship, 0, _xx, 30 ,0.5, 0.5,0,c_white,1);
 			_xx+= 25;
 		}
-		draw_healthbar(21, 52, 120, 60, (obj_ship.current_hp / obj_ship.max_hp) * 100, c_black, c_red, c_lime, 0, true, true); 
+		draw_healthbar(270, 450, 380, 452, (obj_ship.current_hp / obj_ship.max_hp) * 100, c_black, c_red, c_lime, 0, true, true);
 		draw_set_font(fnt_score_text);
-		draw_text(20, 75, "Score: " + string(score));
+		draw_text(20, 50, "Score: " + string(score));
 
 		break;
 
@@ -69,9 +69,9 @@ Complete", 1.7 , 1.7, 0,_gold,_silver,_silver,_gold,1);
 			_xx += 25;
 		}
 		// Healthbar anzeigen
-		draw_healthbar(21, 52, 120, 60, (obj_ship.current_hp / obj_ship.max_hp) * 100, c_black, c_red, c_lime, 0, true, true); 
+		draw_healthbar(270, 450, 380, 452, (obj_ship.current_hp / obj_ship.max_hp) * 100, c_black, c_red, c_lime, 0, true, true);
 		draw_set_font(fnt_score_text);
-		draw_text(20, 75, "Score: " + string(score));
+		draw_text(20, 50, "Score: " + string(score));
 
 		// Draw Enemy Count
 		enemy_x = global.camera_width - 32;
@@ -102,10 +102,15 @@ Complete", 1.7 , 1.7, 0,_gold,_silver,_silver,_gold,1);
 			draw_sprite_ext(spr_ship, 0, _xx, 30 ,0.5, 0.5,0,c_white,1);
 			_xx+= 25;
 		}
+
 		// Healthbar anzeigen
-		draw_healthbar(21, 52, 93, 60, (obj_ship_bossfight.current_hp / obj_ship_bossfight.max_hp) * 100, c_black, c_red, c_lime, 0, true, true);
+		draw_healthbar(270, 450, 380, 452, (obj_ship_bossfight.current_hp / obj_ship_bossfight.max_hp) * 100, c_black, c_red, c_lime, 0, true, true);
 		draw_set_font(fnt_score_text);
-		draw_text(20, 75, "Score: " + string(score));
+		draw_text(20, 50, "Score: " + string(score));
+		draw_text(20, 70, "Current Y: " + string(obj_ship_bossfight.y));
+		draw_text(20, 90, "Shield ON: " + string(obj_ship_bossfight.shield_on));
+		draw_text(20, 110, "Invincible: " + string(obj_ship_bossfight.is_invincible));
+
 
 		// Draw Enemy Count
 		enemy_x = global.camera_width - 32;
