@@ -1,5 +1,6 @@
 /// @description Erstellung Partikel System
 part_sys = part_system_create();
+part_system_depth(part_sys, 100);
 
 // Exhaust Player
 part_type_exhaust = part_type_create();
@@ -16,6 +17,14 @@ part_type_size(part_type_enemy_exhaust, .2, .2, 0.02, 0);
 part_type_color3(part_type_enemy_exhaust, c_yellow, c_orange, c_red);
 part_type_alpha3(part_type_enemy_exhaust, 1, 1, 0);
 part_type_life(part_type_enemy_exhaust, 20, 20);
+
+// Exhaust Boss
+part_type_boss_exhaust = part_type_create();
+part_type_shape(part_type_boss_exhaust,pt_shape_smoke);
+part_type_size(part_type_boss_exhaust, .3, 0.5, 0.1, 0);
+part_type_color3(part_type_boss_exhaust, c_yellow, c_orange, c_red);
+part_type_alpha3(part_type_boss_exhaust, 1, 1, 0);
+part_type_life(part_type_boss_exhaust, 15, 20);
 
 // Meteor Debris L
 part_type_meteor_debris = part_type_create();

@@ -68,7 +68,6 @@ else {
 }
 
 // Particle Thrust FX
-
 	exhaust_counter++;
 
 if(exhaust_counter > 6){

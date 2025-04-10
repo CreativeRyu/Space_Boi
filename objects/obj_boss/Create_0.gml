@@ -4,6 +4,7 @@ max_health = 50;
 current_health = max_health;
 enemy_score = 100;
 fly_speed = 4;
+exhaust_counter = 0;
 
 move_towards_point(room_width / 2, 500, fly_speed);
 

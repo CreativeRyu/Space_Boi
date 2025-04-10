@@ -29,12 +29,12 @@ or mouse_check_button_pressed(mb_left)
 if (room == rm_level_1) {
 	if(score >= 1000) {
 		room_goto(rm_level_1_complete);
-		audio_stop_all()
+		audio_stop_all();
 		audio_play_sound(snd_win, 1, false);
 	}
 	
 	if(obj_ship.player_lives <= 0){
-		audio_stop_all()
+		audio_stop_all();
 		room_goto(rm_gameover);
 		audio_play_sound(snd_lose, 1, false);
 	}
@@ -46,13 +46,13 @@ if (room == rm_level_2) {
 		next_room_timer--;
 		if (next_room_timer <= 0) {
 			room_goto(rm_level_2_complete);
-			audio_stop_all()
+			audio_stop_all();
 			audio_play_sound(snd_win, 1, false);
 			next_room_timer = 120;
 		}
 	}
 	if(obj_ship.player_lives <= 0){
-		audio_stop_all()
+		audio_stop_all();
 		room_goto(rm_gameover);
 		audio_play_sound(snd_lose, 1, false);
 	}
@@ -65,7 +65,7 @@ if (room == rm_level_3) {
 	//	audio_play_sound(snd_win, 1, false);
 	//}
 	if(obj_ship_bossfight.player_lives <= 0){
-		audio_stop_all()
+		audio_stop_all();
 		room_goto(rm_gameover);
 		audio_play_sound(snd_lose, 1, false);
 	}

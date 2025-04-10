@@ -15,7 +15,6 @@ player_lives = 3;
 current_shipx = x;
 current_shipy = y;
 
-
 is_invincible = true;
 invincibility_amount = 4;
 guns = -1;
